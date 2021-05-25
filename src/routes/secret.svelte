@@ -17,7 +17,10 @@ import type { Load } from "@sveltejs/kit";
 	};
 </script>
 <script>
-    export let secret
+
+    export let secret;
+
+
 </script>
 
 <h1>The secret was '{secret}'</h1>

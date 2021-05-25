@@ -4,6 +4,7 @@
 
 <script lang="ts">
 import { goto } from '$app/navigation';
+import { session } from '$app/stores';
 
 	import Counter from '$lib/Counter/index.svelte';
 
@@ -14,6 +15,8 @@ import { goto } from '$app/navigation';
             credentials: 'include'
         })
         if(res.status === 200) {
+            const data = await res.json()
+            $session = data;
             goto('/secret');
         }
     }
